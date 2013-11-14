@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vocabulary trainer</title>
+  <link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
+  <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css" type="text/css"> -->
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+</head>
+<body>
+<div id="container">
+  <div id="main">
+    <div id="display">
+    <div id="entry" class="entry primary middle"><span lang="zh">說話</span></div>
+    <div id="hint" class="hint invisible right"><span>speak</span></div>
+    <div>
+      <div id="pinyin" class="answer invisible middle"><span>shuō huà</span></div>
+      <div id="alt-pinyin" class="answer invisible middle"><span>shot huah</span></div>
+    </div>
+    <div id="alt-char" class="answer invisible right"><span class="zh_text">说话</span></div>
+    </div>
+
+    <div class="right">
+      <div class="inline">
+      <button id="previous" type="button" class="btn btn-default">Previous</button><br>
+      <span class="key-shortcut">Backspace</span>
+      </div>
+    </div>
+    <div class="middle">
+      <div class="inline">
+        <button id="show_hint" type="button" class="btn btn-default">Show (English) Hint</button><br>
+        <span class="key-shortcut">B</span>
+      </div>
+    </div>
+    <div class="middle" id="assess">
+      <div class="inline">
+        <button id="correct" type="button" class="btn btn-default">Known and Verified</button><br>
+        <span class="key-shortcut">V</span>
+      </div>
+      <div class="inline">
+        <button id="incorrect" type="button" class="btn btn-default">Needs Review</button><br>
+        <span class="key-shortcut">N</span>
+      </div>
+    </div>
+    <div class="middle">
+      <div class="inline">
+        <button id="show" type="button" class="btn btn-default">Show Answer</button><br>
+        <span class="key-shortcut">Space</span>
+      </div>
+    </div>
+    <div id="settings" class="right">
+      <!-- <div> -->
+        <button id="toggle_format" type="button" class="btn btn-default">Use simplified characters</button>
+      <!-- </div> -->
+      <!-- <div> -->
+        <button id="toggle_display" type="button" class="btn btn-default">Prompt with pinyin</button>
+      <!-- </div> -->
+    </div>
+  </div>
+  <div id="summary"></div>
+  <div id="restart" class="latent">
+    <div> <button id="review_all" type="button" class="btn btn-default">review all</button></div>
+    <div> <button id="review_incorrect" type="button" class="btn btn-default">review missed</button></div>
+  </div>
+</div>
+<script type="text/template" id="prompt-pinyin">
+    <div class="entry">
+      <div id="pinyin" class="middle"><span>shuō huà</span></div>
+      <div id="alt-pinyin" class="middle"><span>shot huah</span></div>
+    </div>
+    <div id="hint" class="hint invisible right"><span>speak</span></div>
+    <div id="entry" class="answer invisible primary middle"><span lang="zh">說話</span></div>
+    <div id="alt-char" class="answer invisible right"><span class="zh_text">说话</span></div>
+</script>
+  <!-- <script src="assets/js/jquery-1.10.2.js"></script> -->
+  <script src="assets/js/zepto.js"></script>
+  <!-- <script src="bootstrap/js/bootstrap.js"></script> -->
+  <script src="assets/js/underscore.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+  // alert($(window).width());
+  </script>
+</body>
+</html>

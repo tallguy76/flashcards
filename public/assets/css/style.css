@@ -1,0 +1,127 @@
+body {
+  background-color: #EDF2C3;
+  font-family: Garamond, "GaramondNo8", Palatino, Baskerville, "Baskerville Old Face", "Hoefler Text", Times, "Times New Roman", serif;
+  text-rendering: optimizeLegibility;
+  background: blue;
+}
+
+.primary {
+  font-family: STFangsong;
+  font-size: 45px;
+}
+.zh_text {
+  font-family: "LiSong Pro", STSong;
+  font-size: 24px;
+}
+.invisible {
+  visibility: hidden;
+}
+.latent {
+  display: none;
+}
+
+#container {
+  max-width: 420px;
+  position: relative;
+  background: yellow;
+  margin: 0 auto 20px auto;
+}
+#display {
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+#toggle_format {
+  margin-top:20px;
+}
+div.inline {
+  display: inline-block;
+  border: 2px solid #111836;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 5px;
+}
+.right {
+  position: relative;
+  width: 35%;
+  left: 65%;
+  text-align: center;
+}
+.middle {
+  text-align: center;
+}
+@media screen and (max-device-width: 1024px) {
+  #display {
+  padding-top: 10px;
+  margin-bottom: 10px;
+  }
+  .right {
+    width: 55%;
+    left: 45%;
+    background: red;
+  }
+  .right button {
+    font-size: 0.8em;
+  }
+  .key-shortcut {
+    display:none;
+  }
+  div.inline {
+    border: none;
+  }
+}
+@media screen
+and (max-device-width: 480px)
+and (orientation: portrait) {
+  .middle button {
+    height: 45px;
+    padding: 5px;
+  }
+  #assess button {
+    width: 130px;
+    /*padding: 5px;*/
+    height: 50px;
+  }
+}
+@media screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: landscape) {
+  #settings {
+    left: 0;
+    width: 100%;
+  }
+  .entry {
+    float: left;
+    padding: 5px;
+  }
+  .answer {
+    padding: 0 5px;
+  }
+  .middle {
+    text-align: left;
+  }
+  .right {
+    /*position: relative;*/
+    float: right;
+  }
+  #assess {
+    width: 260px;
+  }
+  #assess button {
+    width: 110px;
+    /*padding: 5px;*/
+    height: 40px;
+    font-size: 0.8em;
+  }
+  #previous {
+    /*float: right;*/
+  }
+}
+@media screen and (max-width: 410px) {
+  .right {
+    width: 60%;
+    left: 40%;
+  }
+
+
+}
