@@ -167,7 +167,7 @@ var begin_run = function () {
   disabled.previous = true;
   $("#restart").addClass("latent");
   displayItem(run[cur]);
-}
+};
 
 
 var appInit = function () {
@@ -181,7 +181,7 @@ var appInit = function () {
 
 $(function () {
   $.ajax({
-    url: "assets/js/imb_v.json",
+    url: "assets/js/mengkemu_v.json",
     success: function (data) {
       vocab = data;
       appInit();

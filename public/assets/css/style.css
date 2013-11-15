@@ -1,12 +1,16 @@
+@font-face {
+  font-family: Song;
+  src: url("/assets/fonts/AppleLiSungLight.ttf");
+}
+
 body {
   background-color: #EDF2C3;
   font-family: Garamond, "GaramondNo8", Palatino, Baskerville, "Baskerville Old Face", "Hoefler Text", Times, "Times New Roman", serif;
   text-rendering: optimizeLegibility;
-  background: blue;
 }
 
 .primary {
-  font-family: STFangsong;
+  font-family: STFangsong, Song ;
   font-size: 45px;
 }
 .zh_text {
@@ -23,7 +27,6 @@ body {
 #container {
   max-width: 420px;
   position: relative;
-  background: yellow;
   margin: 0 auto 20px auto;
 }
 #display {
@@ -57,7 +60,6 @@ div.inline {
   .right {
     width: 55%;
     left: 45%;
-    background: red;
   }
   .right button {
     font-size: 0.8em;
@@ -89,23 +91,31 @@ and (orientation: landscape) {
   #settings {
     left: 0;
     width: 100%;
+    clear: both;
+    padding-bottom: 5px;
   }
   .entry {
     float: left;
-    padding: 5px;
-  }
-  .answer {
     padding: 0 5px;
+  }
+  .answer, .hint {
+    padding: 0 5px;
+  }
+  .dual-pinyin, .hint {
+    padding-top: 8px;
   }
   .middle {
     text-align: left;
   }
   .right {
-    /*position: relative;*/
+    position: relative;
     float: right;
+    left: 0;
+    width: 180px;
   }
   #assess {
-    width: 260px;
+    width: 240px;
+    clear: both;
   }
   #assess button {
     width: 110px;
@@ -117,11 +127,4 @@ and (orientation: landscape) {
     /*float: right;*/
   }
 }
-@media screen and (max-width: 410px) {
-  .right {
-    width: 60%;
-    left: 40%;
-  }
 
-
-}
