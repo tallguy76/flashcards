@@ -21,37 +21,59 @@
     <div id="alt-char" class="answer invisible right"><span class="zh_text">说话</span></div>
     </div>
 
-    <div class="right">
-      <div class="inline">
+    <div class="right" id="previous-box">
+      <div class="inline bordered">
       <button id="previous" type="button" class="btn btn-default">Previous</button><br>
       <span class="key-shortcut">Backspace</span>
       </div>
     </div>
     <div class="middle">
-      <div class="inline">
+      <div class="inline bordered">
         <button id="show_hint" type="button" class="btn btn-default">Show (English) Hint</button><br>
         <span class="key-shortcut">B</span>
       </div>
     </div>
     <div class="middle" id="assess">
-      <div class="inline">
+      <div class="inline bordered">
         <button id="correct" type="button" class="btn btn-default">Known and Verified</button><br>
         <span class="key-shortcut">V</span>
       </div>
-      <div class="inline">
+      <div class="inline bordered">
         <button id="incorrect" type="button" class="btn btn-default">Needs Review</button><br>
         <span class="key-shortcut">N</span>
       </div>
     </div>
     <div class="middle">
-      <div class="inline">
+      <div class="inline bordered">
         <button id="show" type="button" class="btn btn-default">Show Answer</button><br>
         <span class="key-shortcut">Space</span>
       </div>
     </div>
-    <div id="settings" class="right">
-        <button id="toggle_format" type="button" class="btn btn-default">Use simplified characters</button>
+    <div id="settings">
+      <div class="inline bordered">
+        <button id="toggle_format" type="button" class="btn btn-default">Use traditional characters</button>
         <button id="toggle_display" type="button" class="btn btn-default">Prompt with pinyin</button>
+      </div>
+      <div id="font_selector" class="inline bordered">
+        Available fonts:
+        <select class="form-control item-select" id="fonts">
+          <option>fangsong</option>
+          <option>song</option>
+          <option>kaiti</option>
+          <option>heiti</option>
+        </select>
+        <button id="load_font" type="button" class="btn btn-primary">Load</button>
+      </div>
+      <div id="vocab_selector" class="inline bordered">
+        Available vocabulary lists:
+        <select class="form-control item-select" id="vocab_lists">
+          <option>mengkemu</option>
+          <option>sanzijing</option>
+          <option>yinshi</option>
+          <option>imb</option>
+        </select>
+        <button id="load_vocab_list" type="button" class="btn btn-primary">Load</button>
+      </div>
     </div>
   </div>
   <div id="summary"></div>

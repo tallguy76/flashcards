@@ -6,7 +6,38 @@ var run = [{"trad":"鐵","simp":"铁","pinyin":"tiě","gcr":"tiet","definition":
 var cur = 0;
 var lastWrong = false;
 var incorrect = [];
-var charFormat = {primary:"trad",secondary:"simp"};
+var charFormat = {primary:"simp",secondary:"trad"};
+var fontSetting = {simp: "fangsong", trad:"song"};
+var loadFont = function (fontName) {
+  fontSetting[charFormat.primary] = fontName;
+  setFonts();
+};
+var setFonts = function () {
+  clearFonts($("#entry"));
+  clearFonts($("#alt-char"));
+  $("#entry").addClass(
+    fontSetting[charFormat.primary] + "-" + charFormat.primary
+  );
+  $("#alt-char").addClass(
+    fontSetting[charFormat.secondary] + "-" + charFormat.secondary
+  );
+};
+var toggleFormat = function () {
+  charFormat = {primary: charFormat.secondary, secondary: charFormat.primary};
+  var secondaryName =
+    charFormat.secondary === "trad" ?
+    "traditional" : "simplified";
+  $("#toggle_format").html(
+    "Use " + secondaryName + " characters"
+  );
+  setFonts();
+  displayItem(run[cur]);
+};
+var clearFonts = function (obj) {
+  _(["song-trad","song-simp","fangsong-trad","fangsong-simp","kaiti-trad","kaiti-simp","heiti-trad","heiti-simp"]).each(function (c) {
+    obj.removeClass(c);
+  });
+};
 var hidden = {entry: false, hint: true, answer: true, "alt-pinyin": true, "alt-char": true};
 var disabled = {"show": false, previous: true, show_hint: false, correct: true, incorrect: true};
 
@@ -69,6 +100,7 @@ var switchDisplay = function () {
   };
   $("#toggle_display").html("Prompt with " + listing.response);
   displayItem(run[cur]);
+  setFonts();
   showAns();
 };
 
@@ -90,15 +122,24 @@ var buttonHandlers = {
     showNext();
   },
   previous: showLast,
-  toggle_format: function () {
-    charFormat = {primary: charFormat.secondary, secondary: charFormat.primary};
-    var secondaryName =
-      charFormat.secondary === "trad" ?
-      "traditional" : "simplified";
-    $("#toggle_format").html(
-      "Use " + secondaryName + " characters"
-    );
-    displayItem(run[cur]);
+  toggle_format: toggleFormat,
+  load_font: function () {
+    var fontName = $("#fonts").val();
+    loadFont(fontName);
+  },
+  load_vocab_list: function () {
+    var list = $("#vocab_lists").val();
+    $("#vocab_selector").hide();
+    $.ajax({
+    url: "assets/js/" + list + "_v.json",
+    success: function (data) {
+      vocab = data;
+      run = _.shuffle(vocab);
+      begin_run();
+      $("#vocab_selector").show();
+    },
+    dataType: "json"
+  });
   },
   review_all: function () {
     $("#summary").html("<p>Last run: " + run.length + " items, " + incorrect.length + " incorrect</p>" +
@@ -171,6 +212,7 @@ var begin_run = function () {
 
 
 var appInit = function () {
+  setFonts();
   run = _.shuffle(vocab);
   begin_run();
 
