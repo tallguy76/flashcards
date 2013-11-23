@@ -12,54 +12,51 @@
 <div id="container">
   <div id="main">
     <div id="display">
-      <div id="entry" class="entry primary main-col"><span lang="zh">說話</span></div>
-      <div class="dual-pinyin">
-        <div id="pinyin" class="answer invisible main-col"><span>shuō huà</span></div>
-        <div id="alt-pinyin" class="answer invisible main-col"><span>shot huah</span></div>
-      </div> <!-- .dual-pinyin -->
-
-    </div> <!-- #display -->
+    <div id="entry" class="entry primary main-col"><span lang="zh">說話</span></div>
     <div id="hint" class="hint invisible off-side"><span>speak</span></div>
+    <div class="dual-pinyin">
+      <div id="pinyin" class="answer invisible main-col"><span>shuō huà</span></div>
+      <div id="alt-pinyin" class="answer invisible main-col"><span>shot huah</span></div>
+    </div>
     <div id="alt-char" class="answer invisible off-side"><span class="zh_text">说话</span></div>
-  </div> <!-- #main -->
+    </div>
 
     <div class="off-side" id="previous-box">
-      <div class="button-holder bordered">
+      <div class="inline bordered">
       <button id="previous" type="button" class="btn btn-default">Previous</button><br>
       <span class="key-shortcut">Backspace</span>
       </div>
     </div>
     <div class="main-col">
-      <div class="button-holder bordered">
-        <button id="show_hint" type="button" class="btn btn-info">Show (English) Hint</button><br>
+      <div class="inline bordered">
+        <button id="show_hint" type="button" class="btn btn-default">Show (English) Hint</button><br>
         <span class="key-shortcut">B</span>
       </div>
     </div>
     <div class="main-col" id="assess">
-      <div class="button-holder bordered">
-        <button id="correct" type="button" class="btn btn-success">Known and Verified</button><br>
+      <div class="inline bordered">
+        <button id="correct" type="button" class="btn btn-default">Known and Verified</button><br>
         <span class="key-shortcut">V</span>
       </div>
-      <div class="button-holder bordered">
-        <button id="incorrect" type="button" class="btn btn-warning">Needs Review</button><br>
+      <div class="inline bordered">
+        <button id="incorrect" type="button" class="btn btn-default">Needs Review</button><br>
         <span class="key-shortcut">N</span>
       </div>
     </div>
     <div class="main-col">
-      <div class="button-holder bordered">
-        <button id="show" type="button" class="btn btn-primary">Show Answer</button><br>
+      <div class="inline bordered">
+        <button id="show" type="button" class="btn btn-default">Show Answer</button><br>
         <span class="key-shortcut">Space</span>
       </div>
     </div>
-  </div>
     <div id="settings">
-      <div class="btn-group-vertical">
-        <button id="toggle_format" type="button" class="btn btn-info">Use traditional characters</button>
-        <button id="toggle_display" type="button" class="btn btn-info">Prompt with pinyin</button>
+      <div class="inline bordered">
+        <button id="toggle_format" type="button" class="btn btn-default">Use traditional characters</button>
+        <button id="toggle_display" type="button" class="btn btn-default">Prompt with pinyin</button>
       </div>
-      <div id="font_selector" class="button-holder bordered">
+      <div id="font_selector" class="inline bordered">
         Available fonts:
-        <select id="fonts">
+        <select class="form-control item-select" id="fonts">
           <option>fangsong</option>
           <option>song</option>
           <option>kaiti</option>
@@ -67,7 +64,7 @@
         </select>
         <button id="load_font" type="button" class="btn btn-primary">Load</button>
       </div>
-      <div id="vocab_selector" class="button-holder bordered">
+      <div id="vocab_selector" class="inline bordered">
         Available vocabulary lists:
         <select class="form-control item-select" id="vocab_lists">
           <option>mengkemu</option>
@@ -78,6 +75,7 @@
         <button id="load_vocab_list" type="button" class="btn btn-primary">Load</button>
       </div>
     </div>
+  </div>
   <div id="summary"></div>
   <div id="restart" class="latent">
     <div> <button id="review_all" type="button" class="btn btn-default">review all</button></div>
@@ -87,9 +85,7 @@
 <script type="text/template" id="prompt-pinyin">
     <div class="entry dual-pinyin">
       <div id="pinyin" class="main-col"><span>shuō huà</span></div>
-      <div id="alt-pinyin" class="main-col"><span>shot huah</span>
-      <span class="glyphicon glyphicon-question-sign"></span>
-      </div>
+      <div id="alt-pinyin" class="main-col"><span>shot huah</span></div>
     </div>
     <div id="hint" class="hint invisible off-side"><span>speak</span></div>
     <div id="entry" class="answer invisible primary main-col"><span lang="zh">說話</span></div>

@@ -7,28 +7,28 @@
   src: url("/assets/fonts/KaiTi.ttf");
 }
 .song-trad {
-  font-family: "LiSong Pro";
+  font-family: "LiSong Pro", "Batang";
 }
 .song-simp {
-  font-family: "STSong";
+  font-family: "STSong", "Adobe Song Std L";
 }
 .fangsong-trad {
-  font-family: "STFangsong";
+  font-family: "STFangsong", "Adobe Fangsong Std R";
 }
 .fangsong-simp {
-  font-family: "STFangsong";
+  font-family: "STFangsong", "FangSong";
 }
 .kaiti-trad {
-  font-family: "BiauKai";
+  font-family: "BiauKai", "DFKai-SB";
 }
 .kaiti-simp {
-  font-family: "STKaiti";
+  font-family: "STKaiti", "KaiTi";
 }
 .heiti-trad {
-  font-family: "LiHei Pro";
+  font-family: "Heiti TC","LiHei Pro", "Microsoft JhengHei";
 }
 .heiti-simp {
-  font-family: "STHeiti";
+  font-family: "STHeiti", "SimHei";
 }
 
 body {
@@ -81,26 +81,34 @@ div.bordered {
   padding: 2px;
   margin: 2px;
   border-radius: 5px;
+  /*background-color: #DDC4A3*/
 }
-.right {
+.off-side {
   position: relative;
   width: 45%;
   left: 55%;
   text-align: center;
 }
-.middle {
+.main-col {
   text-align: center;
+}
+#settings div.inline {
+  width: 30%;
+}
+#hint {
+  height: 10em;
+  overflow: auto;
 }
 @media screen and (max-device-width: 1024px) {
   #display {
   padding-top: 10px;
   margin-bottom: 10px;
   }
-  .right {
+  .off-side {
     width: 55%;
     left: 45%;
   }
-  .right button {
+  .off-side button {
     font-size: 0.7em;
   }
   .key-shortcut {
@@ -115,11 +123,17 @@ div.bordered {
   #load_fonts {
     display: inline;
   }
+  #font_selector {
+    display: none;
+  }
+  #settings div.inline {
+  width: 60%;
+}
 }
 @media screen
 and (max-device-width: 480px)
 and (orientation: portrait) {
-  .middle button {
+  .main-col button {
     height: 45px;
     padding: 5px;
   }
@@ -167,13 +181,13 @@ and (orientation: landscape) {
     height: 130px;
     overflow: auto;
   }
-  .middle {
+  .main-col {
     text-align: left;
   }
-  .middle button {
+  .main-col button {
     width: 210px;
   }
-  .right {
+  .off-side {
     position: relative;
     float: right;
     left: 0;

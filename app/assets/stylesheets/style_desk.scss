@@ -1,0 +1,121 @@
+$font-family-serif: Garamond, "GaramondNo8", Palatino, Baskerville, "Baskerville Old Face", "Hoefler Text", Times, "Times New Roman", serif;
+$font-family-sans-serif: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+// $font-family-base: $font-family-serif;
+$body-bg: #EDF2C3;
+$brand-primary: #886679;
+$brand-info: #5ba0ae;
+$btn-info-border: darken($brand-info, 15%);
+$btn-font-weight: bold;
+$deep-text-color: #13136b;
+$btn-info-color: $deep-text-color;
+$btn-primary-color: $deep-text-color;
+$btn-success-color: $deep-text-color;
+$btn-warning-color: $deep-text-color;
+@import 'bootstrap';
+
+body {
+  text-rendering: optimizeLegibility;
+}
+#container {
+  @extend .container;
+  // max-width: 900px;
+}
+#main {
+  @extend .col-md-9;
+  @extend .col-md-offset-3;
+}
+#entry {
+  @extend .col-md-4;
+  @extend .col-md-offset-1;
+  text-align: center;
+  // font-size: 1.3em;
+}
+#hint {
+  // @extend .col-md-4;
+  width: 25%;
+  max-height: 12em;
+  overflow: auto;
+  // float: right;
+}
+.primary {
+  /*font-family: STFangsong, STKaiti;*/
+  font-size: 1.6*$font-size-h1;
+}
+.zh_text {
+  /*font-family: "LiSong Pro", STSong;*/
+  font-size: 24px;
+}
+.dual-pinyin, .main-col {
+  @extend .col-md-2;
+  @extend .col-md-offset-2;
+  text-align: center;
+}
+#alt-char {
+  @extend .col-md-2;
+}
+#assess {
+  clear: left;
+    @extend .row;
+  // @extend .col-md-offset-3;
+}
+#assess button-holder {
+  @extend .col-md-6;
+}
+#settings {
+  // clear: both;
+}
+#settings > div {
+  float: left;
+  clear: left;
+}
+.invisible {
+  visibility: hidden;
+}
+.latent {
+  display: none;
+}
+.button-holder {
+  display: inline-block;
+}
+div.bordered {
+  border: 2px solid #111836;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 5px;
+  /*background-color: #DDC4A3*/
+}
+button {
+  @extend .btn;
+  @extend .btn-default;
+}
+select {
+  @extend form-control;
+  @extend item-select;
+}
+
+
+
+.song-trad {
+  font-family: "LiSong Pro", "Batang";
+}
+.song-simp {
+  font-family: "STSong", "Adobe Song Std L";
+}
+.fangsong-trad {
+  font-family: "STFangsong", "Adobe Fangsong Std R";
+}
+.fangsong-simp {
+  font-family: "STFangsong", "FangSong";
+}
+.kaiti-trad {
+  font-family: "BiauKai", "DFKai-SB";
+}
+.kaiti-simp {
+  font-family: "STKaiti", "KaiTi";
+}
+.heiti-trad {
+  font-family: "Heiti TC","LiHei Pro", "Microsoft JhengHei";
+}
+.heiti-simp {
+  font-family: "STHeiti", "SimHei";
+}
