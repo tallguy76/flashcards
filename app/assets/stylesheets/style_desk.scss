@@ -1,41 +1,77 @@
+// Bootstrap Variable Customization
+
+
+// Brand Colors
+// -------------------------
+// $brand-primary:         #428bca;
+$brand-success:         #5cb85c;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+// $brand-info:            #5bc0de;
+$brand-primary: #886679;
+$brand-info: #5ba0ae;
+
+// Scaffolding
+// -------------------------
+$deep-text-color: #13136b;
+$text-color: #000;
+$body-bg: #EDF2C3;
+
+// Typography
+// -------------------------
 $font-family-serif: Garamond, "GaramondNo8", Palatino, Baskerville, "Baskerville Old Face", "Hoefler Text", Times, "Times New Roman", serif;
 $font-family-sans-serif: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 // $font-family-base: $font-family-serif;
-$body-bg: #EDF2C3;
-$brand-primary: #886679;
-$brand-info: #5ba0ae;
-$btn-info-border: darken($brand-info, 15%);
+
+
 $btn-font-weight: bold;
-$deep-text-color: #13136b;
+
+$btn-default-bg: $body-bg;
+
+$btn-default-border: darken($btn-default-bg, 45%);
+$btn-info-border: darken($brand-info, 15%);
+$btn-primary-border: darken($brand-primary, 15%);
+$btn-success-border: darken($brand-success, 15%);
+$btn-warning-border: darken($brand-warning, 15%);
+$btn-danger-border: darken($brand-danger, 15%);
+$btn-default-color: $deep-text-color;
+
 $btn-info-color: $deep-text-color;
 $btn-primary-color: $deep-text-color;
 $btn-success-color: $deep-text-color;
 $btn-warning-color: $deep-text-color;
+
+$input-border-focus:lighten($deep-text-color, 40%);
+
+$screen-lg-min: 10000px;
+$screen-md-min: 10000px;
 @import 'bootstrap';
 
 body {
   text-rendering: optimizeLegibility;
+  padding: 70px 0;
 }
 #container {
   @extend .container;
   // max-width: 900px;
 }
 #main {
-  @extend .col-md-9;
-  @extend .col-md-offset-3;
+  // @extend .row;
+//   @extend .col-sm-9;
+//   @extend .col-sm-offset-3;
 }
 #entry {
-  @extend .col-md-4;
-  @extend .col-md-offset-1;
+  @extend .col-sm-12;
+  // @extend .col-sm-offset-1;
   text-align: center;
   // font-size: 1.3em;
 }
 #hint {
-  // @extend .col-md-4;
+  // @extend .col-sm-4;
   width: 25%;
-  max-height: 12em;
+  height: 12em;
   overflow: auto;
-  // float: right;
+  float: right;
 }
 .primary {
   /*font-family: STFangsong, STKaiti;*/
@@ -45,26 +81,50 @@ body {
   /*font-family: "LiSong Pro", STSong;*/
   font-size: 24px;
 }
-.dual-pinyin, .main-col {
-  @extend .col-md-2;
-  @extend .col-md-offset-2;
+.main-col {
+  @extend .col-sm-12;
+  // @extend .col-sm-offset-2;
   text-align: center;
 }
+.dual-pinyin {
+  @extend .col-sm-4;
+  @extend .col-sm-offset-4;
+  text-align: center;
+}
+.popover {
+  width: 300px;
+}
+.popover-title {
+  background-color: lighten($brand-warning,10%);
+}
+.popover-content {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  background-color: lighten($body-bg,5%);
+}
+#display i:hover {
+  color: $input-border-focus;
+}
 #alt-char {
-  @extend .col-md-2;
+  @extend .col-sm-2;
 }
 #assess {
   clear: left;
     @extend .row;
-  // @extend .col-md-offset-3;
+  // @extend .col-sm-offset-3;
 }
-#assess button-holder {
-  @extend .col-md-6;
+#assess .button-holder {
+  // @extend .col-sm-6;
+  // display: inline-block;
+  // width: auto;
 }
 #settings {
   // clear: both;
+  position: relative;
 }
 #settings > div {
+  position: relative;
   float: left;
   clear: left;
 }
@@ -89,11 +149,10 @@ button {
   @extend .btn-default;
 }
 select {
-  @extend form-control;
-  @extend item-select;
+  @extend .form-control;
+  @extend .item-select;
+  background-color: $body-bg;
 }
-
-
 
 .song-trad {
   font-family: "LiSong Pro", "Batang";

@@ -170,8 +170,7 @@ var enableKeyShortcuts = function () {
       e.preventDefault();
       respond("show");
     break;
-    case 66:
-    case 98:
+    case 72:
       e.preventDefault();
       respond("show_hint");
     break;
@@ -179,8 +178,7 @@ var enableKeyShortcuts = function () {
       e.preventDefault();
       respond("previous");
     break;
-    case 86:
-    case 118:
+    case 75:
       e.preventDefault();
       respond("correct");
     break;
@@ -219,6 +217,17 @@ var appInit = function () {
   enableButtons();
   enableKeyShortcuts();
   altDisplay = $("#prompt-pinyin").html();
+  $("#display").popover({
+    selector: 'i',
+    trigger: 'click',
+    html: true,
+    title: "GCR"
+  }).on('shown.bs.popover',function (e) {
+    var content = $(this).find(".popover-content");
+    if(content.css("hyphens") === "auto" ){
+      content.css("text-align", "justify");
+    }
+  });
 };
 
 $(function () {
