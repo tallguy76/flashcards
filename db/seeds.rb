@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+["mengkemu","sanzijing","yinshi","imb","tang122_130_139","hwdd_fjjq"].each do |n|
+  VocabList.create name: n
+end

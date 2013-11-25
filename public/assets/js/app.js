@@ -41,6 +41,7 @@ var clearFonts = function (obj) {
 var hidden = {entry: false, hint: true, answer: true, "alt-pinyin": true, "alt-char": true};
 var disabled = {"show": false, previous: true, show_hint: false, correct: true, incorrect: true};
 
+
 var showAns = function () {
   hidden = {entry: false, hint: false, answer: false, "alt-pinyin": false, "alt-char": false};
   $(".hint").removeClass("invisible");
@@ -127,20 +128,7 @@ var buttonHandlers = {
     var fontName = $("#fonts").val();
     loadFont(fontName);
   },
-  load_vocab_list: function () {
-    var list = $("#vocab_lists").val();
-    $("#vocab_selector").hide();
-    $.ajax({
-    url: "assets/js/" + list + "_v.json",
-    success: function (data) {
-      vocab = data;
-      run = _.shuffle(vocab);
-      begin_run();
-      $("#vocab_selector").show();
-    },
-    dataType: "json"
-  });
-  },
+  load_vocab_list: loadVocabList,
   review_all: function () {
     $("#summary").html("<p>Last run: " + run.length + " items, " + incorrect.length + " incorrect</p>" +
       "<p>Reviewing the entire list<p>"
@@ -209,11 +197,21 @@ var begin_run = function () {
 };
 
 
+function loadVocabList () {
+  var list = $("#vocab_lists").val();
+  $.ajax({
+    url: "assets/js/" + list + "_v.json",
+    success: function (data) {
+      vocab = data;
+      run = _.shuffle(vocab);
+      begin_run();
+      $("#vocab_selector").show();
+    },
+    dataType: "json"
+  });
+}
 var appInit = function () {
   setFonts();
-  run = _.shuffle(vocab);
-  begin_run();
-
   enableButtons();
   enableKeyShortcuts();
   altDisplay = $("#prompt-pinyin").html();
@@ -231,14 +229,8 @@ var appInit = function () {
 };
 
 $(function () {
-  $.ajax({
-    url: "assets/js/mengkemu_v.json",
-    success: function (data) {
-      vocab = data;
-      appInit();
-    },
-    dataType: "json"
-  });
+  loadVocabList();
+  appInit();
 });
 
 

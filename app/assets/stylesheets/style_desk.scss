@@ -97,6 +97,7 @@ body {
   @extend .col-sm-4;
   @extend .col-sm-offset-4;
   text-align: center;
+  font-family: $font-family-serif;
 }
 .popover {
   width: 300px;
