@@ -34,7 +34,7 @@ var toggleFormat = function () {
   displayItem(run[cur]);
 };
 var clearFonts = function (obj) {
-  _(["song-trad","song-simp","fangsong-trad","fangsong-simp","kaiti-trad","kaiti-simp","heiti-trad","heiti-simp"]).each(function (c) {
+  _(["song-trad","song-simp","fangsong-trad","fangsong-simp","kaiti-trad","kaiti-simp","heiti-trad","heiti-simp","calligraphic-trad","calligraphic-simp"]).each(function (c) {
     obj.removeClass(c);
   });
 };

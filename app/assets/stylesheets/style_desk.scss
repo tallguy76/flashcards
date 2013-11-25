@@ -14,6 +14,8 @@ $brand-info: #5ba0ae;
 // Scaffolding
 // -------------------------
 $deep-text-color: #13136b;
+$link-color: lighten($deep-text-color,15%);
+$link-hover-color: $deep-text-color;
 $text-color: #000;
 $body-bg: #EDF2C3;
 
@@ -55,20 +57,25 @@ body {
   @extend .container;
   // max-width: 900px;
 }
+#logo {
+  opacity: 0.6;
+  size: 39px 81px;
+  @extend .hidden-xs;
+}
 #main {
   // @extend .row;
-//   @extend .col-sm-9;
-//   @extend .col-sm-offset-3;
+//   @extend .col-xs-9;
+//   @extend .col-xs-offset-3;
 }
 #entry {
-  @extend .col-sm-12;
-  // @extend .col-sm-offset-1;
+  @extend .col-xs-12;
+  // @extend .col-xs-offset-1;
   text-align: center;
   // font-size: 1.3em;
 }
 #hint {
-  // @extend .col-sm-4;
-  width: 25%;
+  // @extend .col-xs-4;
+  min-width: 168px;
   height: 12em;
   overflow: auto;
   float: right;
@@ -82,8 +89,8 @@ body {
   font-size: 24px;
 }
 .main-col {
-  @extend .col-sm-12;
-  // @extend .col-sm-offset-2;
+  @extend .col-xs-12;
+  // @extend .col-xs-offset-2;
   text-align: center;
 }
 .dual-pinyin {
@@ -103,8 +110,11 @@ body {
   hyphens: auto;
   background-color: lighten($body-bg,5%);
 }
+#display i {
+  color: $link-color;
+}
 #display i:hover {
-  color: $input-border-focus;
+  color: $link-hover-color;
 }
 #alt-char {
   @extend .col-sm-2;
@@ -112,12 +122,16 @@ body {
 #assess {
   clear: left;
     @extend .row;
-  // @extend .col-sm-offset-3;
+    left: ($grid-gutter-width / 2);
+  // @extend .col-xs-offset-3;
 }
 #assess .button-holder {
-  // @extend .col-sm-6;
+  @extend .col-xs-6;
   // display: inline-block;
   // width: auto;
+}
+.button-holder button {
+  width: 100%;
 }
 #settings {
   // clear: both;
@@ -138,10 +152,10 @@ body {
   display: inline-block;
 }
 div.bordered {
-  border: 2px solid #111836;
-  padding: 2px;
-  margin: 2px;
-  border-radius: 5px;
+  // border: 2px solid #11\1836;
+  // padding: 2px;
+  // margin: 2px;
+  // border-radius: 5px;
   /*background-color: #DDC4A3*/
 }
 button {
@@ -177,4 +191,31 @@ select {
 }
 .heiti-simp {
   font-family: "STHeiti", "SimHei";
+}
+.calligraphic-trad {
+  font-family: "DFNewChuan-B5";
+}
+.calligraphic-simp {
+  font-family: "STXingkai";
+}
+
+@font-face {
+  font-family: Kaiti;
+  src: url("/assets/fonts/KaiTi.ttf");
+}
+@media screen and (max-device-width: 1024px) {
+  .key-shortcut, #font_selector {
+    display:none;
+  }
+  #entry, #alt-char {
+    font-family: Kaiti;
+  }
+  .button-holder {
+    padding-bottom: 4px;
+  }
+}
+@media screen and (max-width: 568px){
+  #hint {
+    height: 4em;
+  }
 }

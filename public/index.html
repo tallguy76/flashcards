@@ -12,13 +12,19 @@
 <div id="container" class="container">
 
   <div id="main" class="row">
-    <div class="col-sm-3">
+    <div class="col-xs-3">
+      <img src="weijianan_2.png" alt="unmetwellknown" id="logo" />
+      <!-- <div id="logo"></div> -->
       <div class="off-side " id="previous-box">
         <div class="button-holder bordered">
         <button id="previous" type="button" class="btn btn-default">Previous</button><br>
         <span class="key-shortcut">Backspace</span>
         </div>
       </div>
+    </div>
+    <div class="col-sm-3 pull-right">
+      <div id="hint" class="hint invisible off-side"><span>speak</span></div>
+      <div id="alt-char" class="answer invisible pull-right"><span class="zh_text">说话</span></div>
     </div>
     <div class="col-sm-6">
       <div id="display" class="row">
@@ -29,18 +35,11 @@
         <div class="dual-pinyin">
           <div id="alt-pinyin" class="answer invisible main-col"><span>shot huah</span></div>
         </div> <!-- .dual-pinyin -->
-        <div class="col-xs-3 answer invisible">
-          <i data-placement=​"right" data-title="GCR" data-content="The second romanized form is General Chinese Romanization. This system was the retirement project of Yuen Ren Chao (趙元任), the notable linguist and Harvard professor. It was designed to be usable with all major dialects and not to favor standard Mandarin. Distinctive features include tone spelling (no diacriticals), a q- for an initial ng-sound lost in Mandarin, and dr-, sr-, zr- for ancient retroflex dentals. Prof.&nbsp;Chao also proposed overhauling the character system so that each spelling would have a single character associated with it and full literacy could be achieved by learning only 2085 characters." class="glyphicon glyphicon-question-sign"></i>
+        <div class="col-sm-3 hidden-xs answer invisible">
+          <i data-placement=​"right" data-title="GCR" data-content="The second romanized form is General Chinese Romanization. This system was the retirement project of Yuen Ren Chao (趙元任), the notable linguist and Harvard professor. It was designed to be usable with all major dialects and not to favor standard Mandarin. Distinctive features include tone spelling (no diacriticals), a q- for an initial ng-sound lost in Mandarin, and dr-, sr-, zr- for ancient retroflex consonants. Prof.&nbsp;Chao also proposed overhauling the character system so that each spelling would have a single character associated with it and full literacy could be achieved by learning only 2085 characters." class="glyphicon glyphicon-question-sign"></i>
         </div>
       </div> <!-- #display -->
-    </div>
-    <div id="hint" class="hint invisible off-side"><span>speak</span></div>
-    <div id="alt-char" class="answer invisible pull-right"><span class="zh_text">说话</span></div>
-  </div> <!-- #main -->
-
-
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
+      <div>
         <div class="row">
           <div class="main-col">
             <div class="button-holder bordered">
@@ -67,6 +66,13 @@
         </div>
       </div>
     </div>
+
+  </div> <!-- #main -->
+
+
+    <div class="row">
+
+    </div>
     <div class="row">
       <div id="settings" class="col-sm-4">
         <div class="btn-group-vertical">
@@ -80,6 +86,7 @@
             <option>song</option>
             <option>kaiti</option>
             <option>heiti</option>
+            <option>calligraphic</option>
           </select>
           <button id="load_font" type="button" class="btn btn-primary">Load</button>
         </div>
