@@ -1,0 +1,21 @@
+CACHE MANIFEST
+assets/js/app.js
+assets/js/hwdd_fjjq_v.json
+assets/js/imb_v.json
+assets/js/mengkemu_v.json
+assets/js/sanzijing_v.json
+assets/js/tang122_130_139_v.json
+assets/js/yinshi_v.json
+
+assets/application.css
+assets/js/jquery-1.10.2.js
+assets/js/bootstrap.js
+assets/js/underscore.js
+
+# Needed for desktop and tablets only:
+assets/bootstrap/glyphicons-halflings-regular.woff
+weijianan_2.png
+
+# Needed for tablets and mobile only:
+assets/fonts/KaiTi.ttf
+an.png

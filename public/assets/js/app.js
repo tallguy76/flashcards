@@ -182,7 +182,7 @@ var displayItem = function (obj) {
   $("#entry").children("span").html(obj[charFormat.primary]);
   $("#hint").children("span").html(obj.definition);
   $("#pinyin").children("span").html(obj.pinyin);
-  $("#alt-pinyin").children("span").html(obj.gcr);
+  $("#alt-pinyin").find("span").html(obj.gcr);
   $("#alt-char").children("span").html(obj[charFormat.secondary]);
 };
 

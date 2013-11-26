@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def drilling
-    @v_lists = VocabList.all
+    @v_lists = VocabList.all.shuffle
   end
 end

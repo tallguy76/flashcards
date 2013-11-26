@@ -98,6 +98,17 @@ body {
   @extend .col-sm-offset-4;
   text-align: center;
   font-family: $font-family-serif;
+  padding: 0;
+}
+abbr {
+  position: relative;
+}
+#gcr-info-link {
+  padding-left: 5px;
+  display: inline-block;
+  position: absolute;
+  left: 100%;
+  top: 0;
 }
 .popover {
   width: 300px;
@@ -106,10 +117,20 @@ body {
   background-color: lighten($brand-warning,10%);
 }
 .popover-content {
+  font-family: $font-family-base;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
   background-color: lighten($body-bg,5%);
+}
+#previous {
+  z-index:20;
+}
+#previous-box {
+  z-index: 10;
+}
+#display {
+  z-index: 0;
 }
 #display i {
   color: $link-color;
@@ -119,6 +140,8 @@ body {
 }
 #alt-char {
   @extend .col-sm-2;
+  @extend .pull-right;
+  clear: right;
 }
 #assess {
   clear: left;
@@ -215,8 +238,20 @@ select {
     padding-bottom: 4px;
   }
 }
-@media screen and (max-width: 568px){
+@media screen and (max-width: 843px){
   #hint {
     height: 4em;
+  }
+}
+@media screen and (max-width: 568px){
+  .button-holder button {
+    // padding: 6px 0;
+  }
+  #assess .button-holder {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  #gcr-info-link {
+    display: none;
   }
 }
