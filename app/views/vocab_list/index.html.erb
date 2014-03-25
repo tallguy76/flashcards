@@ -1,0 +1,7 @@
+<div id="container" class="container">
+<table>
+<% VocabList.all.each do |v| %>
+<tr><td> <%= v.name %> </td><td> <%= v.description %> </td> </tr>
+<% end %>
+</table>
+</div>

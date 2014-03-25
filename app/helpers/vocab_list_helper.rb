@@ -1,0 +1,2 @@
+module VocabListHelper
+end

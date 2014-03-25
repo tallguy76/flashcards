@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131124213012) do
+ActiveRecord::Schema.define(version: 20131210162613) do
+
+  create_table "list_items", force: true do |t|
+    t.integer  "list_id"
+    t.integer  "word_id"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -21,8 +29,32 @@ ActiveRecord::Schema.define(version: 20131124213012) do
     t.datetime "updated_at"
   end
 
+  create_table "viewings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "word_id"
+    t.datetime "show_date"
+    t.time     "viewing_duration"
+    t.integer  "response"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "primary_simp"
+    t.boolean  "prompt_char"
+  end
+
   create_table "vocab_lists", force: true do |t|
     t.string   "name"
+    t.string   "description"
+    t.string   "domain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "words", force: true do |t|
+    t.string   "simp"
+    t.string   "trad"
+    t.string   "definition"
+    t.string   "pinyin"
+    t.string   "gcr"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

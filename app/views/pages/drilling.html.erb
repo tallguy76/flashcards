@@ -82,13 +82,14 @@
           <button id="load_font" type="button" class="btn btn-primary">Load</button>
         </div>
         <div id="vocab_selector" class="row bordered">
-          Available vocabulary lists:
+          Downloaded vocabulary lists:
           <select id="vocab_lists">
+            <option>mengkemu</option>
             <% @v_lists.each do |v| %>
             <option><%= v.name %></option>
             <% end %>
           </select>
-          <button id="load_vocab_list" type="button" class="btn btn-primary">Load</button>
+          <button id="load_vocab_list" type="button" class="btn btn-primary">Load</button> <%= link_to "browse all", "vocab_list" %>
         </div>
       </div>
       <div class="col-sm-8">
